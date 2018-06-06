@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { init } from '@js/route';
 import { init } from '../../js/route';
-declare var ymaps: any;
+declare const ymaps;
 
 @Component({
   selector: 'trp-ymap',
