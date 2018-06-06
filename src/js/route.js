@@ -1,10 +1,16 @@
+let lkVisibility = false;
+
+export function getLkVisibility() {
+  return lkVisibility;
+}
+
 export function init() {
   /**
    * Создание мультимаршрута.
    * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRoute.xml
    */
   const multiRoute = new ymaps.multiRouter.MultiRoute({
-    referencePoints: ['Казань', 'Ижевск', 'Пермь', 'Екатеринбург', 'Челябинск'],
+    referencePoints: getRouteReferencePoints(),
   }, {
     // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
     boundsAutoApply: true,
@@ -61,7 +67,7 @@ export function init() {
   });
 
   // Добавляем мультимаршрут на карту.
-  myMap.geoObjects.add(multiRoute);
+  // myMap.geoObjects.add(multiRoute);
 
   buttonProfile.events
     .add(
@@ -70,10 +76,13 @@ export function init() {
     );
 
   function lkClickHandler(mouseEv) {
-    console.log(mouseEv);
-
-    document.getElementById('lk').classList.toggle('hidden');
+    // document.getElementById('lk').classList.toggle('hidden');
+    lkVisibility = !lkVisibility;
+    console.log(lkVisibility);
   }
 }
 
+function getRouteReferencePoints() {
+  return ['Казань', 'Ижевск', 'Пермь', 'Екатеринбург', 'Челябинск'];
+}
 // ymaps.ready(init);
