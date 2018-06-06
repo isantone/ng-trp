@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { YmapComponent } from './ymap/ymap.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    YmapComponent
+    YmapComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule
