@@ -6,6 +6,9 @@ import { YmapComponent } from './ymap/ymap.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HeaderComponent } from './common/header/header.component';
 
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDividerModule } from '@angular/material/divider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,9 @@ import { HeaderComponent } from './common/header/header.component';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatSliderModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

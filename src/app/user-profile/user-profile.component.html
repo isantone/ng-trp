@@ -1,11 +1,44 @@
 <div class="lk-container" [hidden]="!lkActive">
-  <div class="userpic-container">
+  <!-- <div class="userpic-container">
     <img src="./assets/images/user_pic.png" alt="" srcset="">
-  </div>
+  </div> -->
   <p class="user-name">
     Иван Иванов
   </p>
   <p class="user-info">
     Возраст: 22
   </p>
+
+  <mat-divider></mat-divider>
+
+  <p class="criteria-label">
+    Культура
+  </p>
+  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+
+  <p class="criteria-label">
+    Архитектура
+  </p>
+  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+
+  <p class="criteria-label">
+    Пляжный отдых
+  </p>
+  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+
+  <p class="criteria-label">
+    Активный отдых
+  </p>
+  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+
+  <p class="criteria-label">
+    Природа
+  </p>
+  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+
+  <p class="criteria-label">
+    Еда
+  </p>
+  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+
 </div>
