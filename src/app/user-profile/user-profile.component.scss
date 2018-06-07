@@ -1,7 +1,7 @@
 .lk-container {
     position: fixed !important;
 
-    height: 500px;
+    min-height: 500px;
     width: 300px;
 
     top: 60px;
@@ -43,4 +43,13 @@
 
 .user-info {
     font-size: 14pt;
+}
+
+.mat-slider {
+    width: 100%;
+}
+
+.criteria-label {
+    padding: 20px 0 0 0;
+    margin: 0;
 }
