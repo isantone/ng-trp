@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { findUserById, findUserByProperty } from '../../db/users';
-import { getLkVisibility } from '../../js/route';
 
 @Component({
   selector: 'trp-user-profile',
@@ -9,10 +8,11 @@ import { getLkVisibility } from '../../js/route';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  @Input() lkActive: boolean;
   objectKeys = Object.keys;
 
   user = findUserById(2);
-  getLkVisibility = getLkVisibility;
+  // getLkVisibility = getLkVisibility;
 
   constructor() { }
 
