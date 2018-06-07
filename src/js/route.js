@@ -1,9 +1,3 @@
-let lkVisibility = false;
-
-export function getLkVisibility() {
-  return lkVisibility;
-}
-
 export function init() {
   /**
    * Создание мультимаршрута.
@@ -24,10 +18,6 @@ export function init() {
 
   const buttonEditor = new ymaps.control.Button({
     data: { content: 'Режим редактирования' },
-  });
-
-  const buttonProfile = new ymaps.control.Button({
-    data: { content: 'Личный кабинет' },
   });
 
   buttonEditor.events.add('select', () => {
@@ -62,24 +52,8 @@ export function init() {
     buttonMaxWidth: 300,
   });
 
-  myMap.controls.add(buttonProfile, {
-    float: 'right',
-  });
-
   // Добавляем мультимаршрут на карту.
   // myMap.geoObjects.add(multiRoute);
-
-  buttonProfile.events
-    .add(
-      'press',
-      lkClickHandler,
-    );
-
-  function lkClickHandler(mouseEv) {
-    // document.getElementById('lk').classList.toggle('hidden');
-    lkVisibility = !lkVisibility;
-    console.log(lkVisibility);
-  }
 }
 
 function getRouteReferencePoints() {
