@@ -11,6 +11,7 @@ $candy-app-primary: mat-palette($mat-indigo);
 $candy-app-accent:  mat-palette($mat-light-blue, A700, A100, A400);
 $candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
 
+@include mat-core-theme($candy-app-theme);
 @include mat-slider-theme($candy-app-theme);
 
 
