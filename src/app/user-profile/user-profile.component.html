@@ -1,12 +1,16 @@
-<div class="lk-container" [hidden]="!lkActive">
+<div
+  *ngIf="user"
+  [hidden]="!lkActive"
+  class="lk-container"
+>
   <!-- <div class="userpic-container">
     <img src="./assets/images/user_pic.png" alt="" srcset="">
   </div> -->
   <p class="user-name">
-    Иван Иванов
+    {{user.info.name}}
   </p>
   <p class="user-info">
-    Возраст: 22
+    Возраст: {{user.info.age}}
   </p>
 
   <mat-divider></mat-divider>
