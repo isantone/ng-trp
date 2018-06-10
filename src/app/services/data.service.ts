@@ -19,7 +19,7 @@ export class DataService {
 
   usersUrl =  `${httpServerUrl}/users`;
   userRegUrl =  `${httpServerUrl}/register`;
-  placesUrl = '../../assets/db/places.json';
+  placesUrl = `${httpServerUrl}/places`;
 
   constructor(private http: HttpClient) { }
 
