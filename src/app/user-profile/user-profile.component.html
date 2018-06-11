@@ -1,48 +1,47 @@
 <div
-  *ngIf="user"
   [hidden]="!lkActive"
   class="lk-container"
 >
-  <!-- <div class="userpic-container">
-    <img src="./assets/images/user_pic.png" alt="" srcset="">
-  </div> -->
-  <p class="user-name">
-    {{user.info.name}}
-  </p>
-  <p class="user-info">
-    Возраст: {{user.info.age}}
-  </p>
 
-  <mat-divider></mat-divider>
+  <ng-container *ngIf="user">
+    <!-- <div class="userpic-container">
+      <img src="./assets/images/user_pic.png" alt="" srcset="">
+    </div> -->
 
-  <p class="criteria-label">
-    Культура
-  </p>
-  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+    <p class="user-name">
+      {{user.name}}
+    </p>
 
-  <p class="criteria-label">
-    Архитектура
-  </p>
-  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+    <ng-container *ngFor="let property of user.info">
+      <p class="user-info">
+        {{property.name}}: {{property.value}}
+      </p>
+    </ng-container>
 
-  <p class="criteria-label">
-    Пляжный отдых
-  </p>
-  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+    <ng-container *ngFor="let preference of user.preferences">
+      <p class="criteria-label">
+        {{preference.name}}
+      </p>
+      <mat-slider
+        thumbLabel
+        [(ngModel)]="preference.value"
+        min="0"
+        max="10"
+        tickInterval="1"
+        class="mat-slider"
+      ></mat-slider>
+    </ng-container>
 
-  <p class="criteria-label">
-    Активный отдых
-  </p>
-  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+    <div class="btn-container">
+      <!-- <button mat-button color="accent" class="minor-btn">ОТМЕНА</button> -->
+      <button mat-stroked-button class="main-btn" (click)="saveLk()">Сохранить</button>
+    </div>
+  </ng-container>
 
-  <p class="criteria-label">
-    Природа
-  </p>
-  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+  <ng-container *ngIf="!user">
+    <!-- <span>PLEASE LOG IN</span> -->
 
-  <p class="criteria-label">
-    Еда
-  </p>
-  <mat-slider thumbLabel min="0" max="10" tickInterval="1" class="mat-slider"></mat-slider>
+    <mat-spinner></mat-spinner>
+  </ng-container>
 
 </div>

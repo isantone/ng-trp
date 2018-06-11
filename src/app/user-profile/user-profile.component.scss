@@ -1,55 +1,73 @@
 .lk-container {
-    position: fixed !important;
+  position: absolute;
+  box-sizing: border-box;
 
-    min-height: 500px;
-    width: 300px;
+  width: 100%;
 
-    top: 60px;
-    right: 10px;
+  padding: 26px;
 
-    padding: 26px;
+  background: white;
+  opacity: 0.95;
 
-    background: white;
-    opacity: 0.95;
-
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-    z-index: 99;
+  overflow-y: auto;
+  z-index: 99;
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .userpic-container {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .user-name,
 .user-info {
-    font-family: 'Century Gothic';
+  font-family: 'Century Gothic';
 }
 
 .user-name {
-    text-align: center;
+  margin-top: 0;
 
-    font-weight: bold;
-    font-size: 18pt;
+  text-align: center;
 
-    color: #333333;
-}
+  font-weight: bold;
+  font-size: 18pt;
 
-.user-info {
-    font-size: 14pt;
+  color: #333333;
 }
 
 .mat-slider {
-    width: 100%;
+  width: 100%;
 }
 
 .criteria-label {
-    padding: 20px 0 0 0;
-    margin: 0;
+  padding: 10px 0 0 8px;
+  margin: 0;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.main-btn {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .lk-container {
+    min-width: 300px;
+    max-height: calc(100% - 80px);
+
+    width: auto;
+    height: auto;
+
+    // top: 60px;
+    top: 70px;
+    right: 10px;
+
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 }
