@@ -1,30 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { YmapComponent } from './ymap/ymap.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { HeaderComponent } from './common/header/header.component';
-
-import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSliderModule } from '@angular/material/slider';
+
+import { AppComponent } from './app.component';
+import { AuthFormComponent } from './auth/auth-form.component';
+import { HeaderComponent } from './common/header/header.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { YmapComponent } from './ymap/ymap.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    YmapComponent,
+    AuthFormComponent,
+    HeaderComponent,
     UserProfileComponent,
-    HeaderComponent
+    YmapComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
 
-    MatSliderModule,
-    MatDividerModule
+    MatButtonModule,
+    MatDividerModule,
+    MatProgressSpinnerModule,
+    MatSliderModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

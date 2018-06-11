@@ -13,15 +13,65 @@ $candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
 
 @include mat-core-theme($candy-app-theme);
 @include mat-slider-theme($candy-app-theme);
+@include mat-progress-spinner-theme($candy-app-theme);
+@include mat-button-theme($candy-app-theme);
 
 
 /* You can add global styles to this file, and also import other style files */
 html, body, #map {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20px);
 
   padding: 0;
   margin: 0;
 
   font-family: 'Century Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-btn .mat-button-focus-overlay {
+  background: none;
+}
+
+
+$button-height: 30px;
+$button-color: rgb(0, 132, 184);
+$button-hover-color: rgb(12, 157, 214);
+
+.main-btn[class],
+.minor-btn[class] {
+  height: $button-height;
+  line-height: $button-height;
+
+  padding: 0 30px;
+
+  font-size: 14px;
+  font-family: 'Century Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $button-color;
+  text-transform: uppercase;
+
+  outline: none;
+
+  transition: all .3s ease;
+}
+
+.main-btn[class] {
+  border-radius: 2px;
+  border: 1px solid $button-color;
+
+  background: none;
+
+  &:hover {
+    color: white;
+
+    background: $button-hover-color;
+    border: 1px solid $button-hover-color;
+
+    cursor: pointer;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
