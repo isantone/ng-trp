@@ -1,42 +1,13 @@
 $page-header-height: 60px;
 
-$button-height: 30px;
-$button-color: rgb(0, 132, 184);
-
 .page-header {
   height: $page-header-height;
   line-height: $page-header-height - 20px;
 
-  padding: 10px 20px;
+  padding: 10px 15px;
   box-sizing: border-box;
 }
 
-.login-btn {
-  position: absolute;
-  top: $button-height / 2;
-  right: 20px;
-
-  height: $button-height;
-
-  padding: 0 30px;
-
-  font-size: 14px;
-  font-family: 'Century Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: $button-color;
-  text-transform: uppercase;
-
-  border-radius: 2px;
-  border: 1px solid $button-color;
-
-  background: none;
-
-  outline: none;
-
-  &:hover {
-    color: white;
-
-    background: rgb(12, 157, 214);
-
-    cursor: pointer;
-  }
+.lk-btn {
+  padding: 0 15px;
 }
