@@ -34,40 +34,51 @@ export class UserProfileComponent implements OnInit {
         console.log('Places:', this.places);
     });
 
-    this.dataService.getUser('ivan')
+    // setTimeout(() => {
+    this.dataService.getUser('petr')
       .subscribe((data) => {
         this.user = data;
+
         console.log('User:', this.user);
     });
+    // }, 4000);
 
-    const user = {
-      "login": "petr",
-      "password": "1111",
-      "name": "Петр Петров",
-      "info": {
-        "age": 24,
-        "sex": "male"
-      },
-      "places": {
-        "restrict": [
-          "Kazan",
-        ],
-        "fav": [
-          "Moscow",
-        ]
-      },
-      "preferences": [
-        {
-          "architecture": 10,
-          "water":        40,
-          "modern":      100,
-          "people":       10
-        }
-      ]
-    };
+    // const user = {
+    //   "login": "petr",
+    //   "password": "1111",
+    //   "name": "Петр Петров",
+    //   "info": {
+    //     "age": 24,
+    //     "sex": "male"
+    //   },
+    //   "places": {
+    //     "restrict": [
+    //       "Kazan",
+    //     ],
+    //     "fav": [
+    //       "Moscow",
+    //     ]
+    //   },
+    //   "preferences": [
+    //     {
+    //       "architecture": 1,
+    //       "water":        4,
+    //       "modern":      10,
+    //       "people":       1
+    //     }
+    //   ]
+    // };
 
     // this.dataService.addUser(user)
     //   .subscribe(user => console.warn(user));
+  }
+
+  saveLk() {
+    this.dataService.sendLk(this.user.login, this.user.preferences)
+      .subscribe((response) => {
+        this.user = response;
+        console.log('Updated user', this.user);
+      });
   }
 
 }

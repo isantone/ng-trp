@@ -69,4 +69,8 @@ export class DataService {
       catchError(this.handleError)
     );
   }
+
+  sendLk(userLogin, userLk) {
+    return this.http.put(`${this.usersUrl}/${userLogin}`, userLk, httpOptions)
+  }
 }
