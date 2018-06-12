@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSliderModule } from '@angular/material/slider';
+import {
+  MatButtonModule,
+  MatDividerModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatSliderModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AuthFormComponent } from './auth/auth-form.component';
@@ -25,11 +30,14 @@ import { YmapComponent } from './ymap/ymap.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
 
     MatButtonModule,
     MatDividerModule,
+    MatIconModule,
+    MatInputModule,
     MatProgressSpinnerModule,
     MatSliderModule
   ],

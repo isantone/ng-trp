@@ -7,7 +7,7 @@
 
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-primary: mat-palette($mat-light-blue, 800);
 $candy-app-accent:  mat-palette($mat-light-blue, A700, A100, A400);
 $candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
 
@@ -15,6 +15,7 @@ $candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
 @include mat-slider-theme($candy-app-theme);
 @include mat-progress-spinner-theme($candy-app-theme);
 @include mat-button-theme($candy-app-theme);
+@include mat-form-field-theme($candy-app-theme);
 
 
 /* You can add global styles to this file, and also import other style files */
@@ -54,7 +55,7 @@ $button-hover-color: rgb(12, 157, 214);
   transition: all .3s ease;
 }
 
-.main-btn[class] {
+.main-btn[class]:not([disabled]) {
   border-radius: 2px;
   border: 1px solid $button-color;
 
@@ -75,3 +76,25 @@ $button-hover-color: rgb(12, 157, 214);
   justify-content: space-between;
   align-items: center;
 }
+
+/// Scroll bar ///
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+//////////////////

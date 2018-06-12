@@ -34,43 +34,13 @@ export class UserProfileComponent implements OnInit {
         console.log('Places:', this.places);
     });
 
-    // setTimeout(() => {
-    this.dataService.getUser('petr')
-      .subscribe((data) => {
-        this.user = data;
-
-        console.log('User:', this.user);
-    });
-    // }, 4000);
-
-    // const user = {
-    //   "login": "petr",
-    //   "password": "1111",
-    //   "name": "Петр Петров",
-    //   "info": {
-    //     "age": 24,
-    //     "sex": "male"
-    //   },
-    //   "places": {
-    //     "restrict": [
-    //       "Kazan",
-    //     ],
-    //     "fav": [
-    //       "Moscow",
-    //     ]
-    //   },
-    //   "preferences": [
-    //     {
-    //       "architecture": 1,
-    //       "water":        4,
-    //       "modern":      10,
-    //       "people":       1
-    //     }
-    //   ]
-    // };
-
     // this.dataService.addUser(user)
     //   .subscribe(user => console.warn(user));
+  }
+
+  onLoggedIn(loggedUser: object) {
+    console.log('Logged In:', loggedUser);
+    this.user = loggedUser;
   }
 
   saveLk() {

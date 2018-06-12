@@ -18,7 +18,8 @@ const httpOptions = {
 export class DataService {
 
   usersUrl =  `${httpServerUrl}/users`;
-  userRegUrl =  `${httpServerUrl}/register`;
+  // userRegUrl =  `${httpServerUrl}/register`;
+  userLogUrl =  `${httpServerUrl}/login`;
   placesUrl = `${httpServerUrl}/places`;
 
   constructor(private http: HttpClient) { }
@@ -55,7 +56,7 @@ export class DataService {
       );
   }
 
-  getUser(userLogin) {
+  login(userLogin) {
     return this.http.get(`${this.usersUrl}/${userLogin}`)
       .pipe(
         retry(3), // retry a failed request up to 3 times
@@ -63,12 +64,12 @@ export class DataService {
       );
   }
 
-  addUser(user) {
-    return this.http.post(this.userRegUrl, user, httpOptions)
-    .pipe(
-      catchError(this.handleError)
-    );
-  }
+  // addUser(user) {
+  //   return this.http.post(this.userRegUrl, user, httpOptions)
+  //   .pipe(
+  //     catchError(this.handleError)
+  //   );
+  // }
 
   sendLk(userLogin, userLk) {
     return this.http.put(`${this.usersUrl}/${userLogin}`, userLk, httpOptions)

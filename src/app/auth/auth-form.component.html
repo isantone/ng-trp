@@ -1,0 +1,68 @@
+<form #loginForm="ngForm" (ngSubmit)="loginUser()" class="login-form">
+
+  <mat-form-field class="form-input">
+
+    <input
+      [(ngModel)]="loginValue"
+      #login="ngModel"
+      matInput
+      name="login"
+      type="text"
+      placeholder="Введите логин"
+      minlength="3"
+      required
+    />
+
+    <mat-error *ngIf="login.hasError('required')">
+      Поле <strong>обязательно</strong> для ввода
+    </mat-error>
+    <mat-error *ngIf="login.hasError('minlength')">
+      Поле должно быть <strong>не менее 3 символов</strong>
+    </mat-error>
+
+    <button
+      *ngIf="loginValue"
+      (click)="loginValue=''"
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field class="form-input">
+    <input
+      [(ngModel)]="passwordValue"
+      #password="ngModel"
+      matInput
+      name="password"
+      type="password"
+      placeholder="Введите пароль"
+      minlength="4"
+      required
+    />
+
+    <mat-error *ngIf="password.hasError('required')">
+      Поле <strong>обязательно</strong> для ввода
+    </mat-error>
+    <mat-error *ngIf="password.hasError('minlength')">
+      Поле должен быть <strong>не менее 4 символов</strong>
+    </mat-error>
+
+    <button
+      *ngIf="passwordValue"
+      (click)="passwordValue=''"
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-stroked-button type="submit" class="main-btn login-btn" [disabled]="!loginForm.form.valid">Войти</button>
+
+</form>

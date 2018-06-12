@@ -38,10 +38,11 @@
     </div>
   </ng-container>
 
-  <ng-container *ngIf="!user">
-    <!-- <span>PLEASE LOG IN</span> -->
+  <!-- <ng-container *ngIf="!user">
+    <span>PLEASE LOG IN</span>
 
     <mat-spinner></mat-spinner>
-  </ng-container>
+  </ng-container> -->
+  <trp-auth-form *ngIf="!user" (loggedIn)="onLoggedIn($event)"></trp-auth-form>
 
 </div>
