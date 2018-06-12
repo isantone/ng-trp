@@ -1,3 +1,5 @@
+declare var ymaps;
+
 export function init() {
   /**
    * Создание мультимаршрута.
