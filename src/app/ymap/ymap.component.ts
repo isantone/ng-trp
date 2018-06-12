@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { init } from '@js/route';
-import { init } from '../../js/route';
-declare const ymaps;
+// import { init } from '../../js/route';
+// declare const ymaps;
 
 @Component({
   selector: 'trp-ymap',
@@ -13,7 +13,7 @@ export class YmapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    ymaps.ready(init);
+    // ymaps.ready(init);
   }
 
 }

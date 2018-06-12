@@ -1,6 +1,6 @@
-declare var ymaps;
+// declare var ymaps;
 
-export function init() {
+/*export */function init() {
   /**
    * Создание мультимаршрута.
    * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRoute.xml
