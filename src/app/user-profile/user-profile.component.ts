@@ -17,7 +17,8 @@ export class UserProfileComponent implements OnInit {
   users;
   places;
 
-  user: any = users[0];
+  user;
+  // user: any = users[0];
 
   constructor(private dataService: DataService) { }
 
@@ -85,7 +86,7 @@ var users = [
       },
       {
         "id": "architecture",
-        "name": "Ахитектура",
+        "name": "Архитектура",
         "value": 9
       },
       {
@@ -150,7 +151,7 @@ var users = [
       },
       {
         "id": "architecture",
-        "name": "Ахитектура",
+        "name": "Архитектура",
         "value": 7
       },
       {

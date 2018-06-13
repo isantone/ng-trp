@@ -55,7 +55,7 @@
   });
 
   // Добавляем мультимаршрут на карту.
-  // myMap.geoObjects.add(multiRoute);
+  myMap.geoObjects.add(multiRoute);
 }
 
 function getRouteReferencePoints() {
