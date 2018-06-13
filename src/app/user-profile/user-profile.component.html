@@ -9,14 +9,14 @@
     </div> -->
 
     <p class="user-name">
-      {{user.name}}
+      {{user.login}}
     </p>
 
-    <ng-container *ngFor="let property of user.info">
+    <!-- <ng-container *ngFor="let property of user.info">
       <p class="user-info">
         {{property.name}}: {{property.value}}
       </p>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container *ngFor="let preference of user.preferences">
       <p class="criteria-label">

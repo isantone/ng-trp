@@ -1,6 +1,6 @@
-<form #loginForm="ngForm" (ngSubmit)="loginUser()" class="login-form">
+<form #loginForm="ngForm" (ngSubmit)="authUser()" class="login-form">
 
-  <mat-form-field class="form-input">
+  <mat-form-field class="form-field">
 
     <input
       [(ngModel)]="loginValue"
@@ -32,7 +32,7 @@
     </button>
   </mat-form-field>
 
-  <mat-form-field class="form-input">
+  <mat-form-field class="form-field">
     <input
       [(ngModel)]="passwordValue"
       #password="ngModel"
@@ -63,6 +63,82 @@
     </button>
   </mat-form-field>
 
-  <button mat-stroked-button type="submit" class="main-btn login-btn" [disabled]="!loginForm.form.valid">Войти</button>
+  <!-- <mat-select
+    *ngIf="regMode"
+    [(ngModel)]="sexValue"
+    [value]="'Мужской'"
+    name="sex"
+    placeholder="Выберите пол"
+    class="sex-select"
+  >
+    <mat-option [value]="'Мужской'">
+      Мужской
+    </mat-option>
+    <mat-option [value]="'Женский'">
+      Женский
+    </mat-option>
+  </mat-select>
+
+  <mat-form-field *ngIf="regMode" class="form-field">
+
+    <input
+      [(ngModel)]="nameValue"
+      #name="ngModel"
+      matInput
+      name="name"
+      type="text"
+      placeholder="Введите имя"
+      minlength="3"
+      required
+    />
+
+    <mat-error *ngIf="name.hasError('required')">
+      Поле <strong>обязательно</strong> для ввода
+    </mat-error>
+    <mat-error *ngIf="name.hasError('minlength')">
+      Поле должно быть <strong>не менее 3 символов</strong>
+    </mat-error>
+
+    <button
+      *ngIf="nameValue"
+      (click)="nameValue=''"
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+
+  </mat-form-field>
+
+  <mat-form-field *ngIf="regMode" class="form-field">
+
+    <input
+      [(ngModel)]="ageValue"
+      #age="ngModel"
+      matInput
+      name="age"
+      type="number"
+      min="7"
+      placeholder="Введите возраст"
+      required
+    />
+
+    <mat-error *ngIf="age.hasError('required')">
+      Поле <strong>обязательно</strong> для ввода
+    </mat-error>
+
+  </mat-form-field> -->
+
+  <button mat-stroked-button type="submit" class="main-btn login-btn" [disabled]="!loginForm.form.valid">{{authBtnText}}</button>
+
+  <a
+    (click)="onAuthSwitcherClick($event)"
+    href
+    class="log-reg-switcher"
+  >
+    {{authText}}
+  </a>
 
 </form>

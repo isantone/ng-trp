@@ -43,7 +43,7 @@ export class DataService {
   getUsers() {
     return this.http.get(this.usersUrl)
       .pipe(
-        retry(3), // retry a failed request up to 3 times
+        // retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
       );
   }
@@ -51,7 +51,7 @@ export class DataService {
   getPlaces() {
     return this.http.get(this.placesUrl)
       .pipe(
-        retry(3), // retry a failed request up to 3 times
+        // retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
       );
   }
@@ -59,7 +59,22 @@ export class DataService {
   login(userLogin) {
     return this.http.get(`${this.usersUrl}/${userLogin}`)
       .pipe(
-        retry(3), // retry a failed request up to 3 times
+        // retry(3), // retry a failed request up to 3 times
+        catchError(this.handleError) // then handle the error
+      );
+  }
+
+  // register(userLogin, userPassword, userName, userAge, sexValue) {
+  register(userLogin, userPassword) {
+    return this.http.post(`${this.usersUrl}/register`, {
+      login: userLogin,
+      password: userPassword,
+      // name: userName,
+      // age: userAge,
+      // sex: sexValue
+    })
+      .pipe(
+        // retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
       );
   }

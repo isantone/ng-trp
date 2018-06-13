@@ -10,6 +10,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatProgressSpinnerModule,
+  MatSelectModule,
   MatSliderModule
 } from '@angular/material';
 
@@ -39,6 +40,7 @@ import { YmapComponent } from './ymap/ymap.component';
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
     MatSliderModule
   ],
   providers: [],
