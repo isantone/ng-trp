@@ -1,0 +1,96 @@
+.recommendations-list {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  &.out-of-route {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    .recommended-item {
+      &:first-child {
+        // border-top: 1px solid #ccc;
+        border-top: 1px solid white;
+      }
+
+      opacity: .5;
+      border-bottom: 1px solid white;
+      background: #ccc;
+    }
+  }
+}
+
+.divider {
+  // border-bottom: 1px solid #ccc;
+}
+
+.recommended-item {
+  padding: 20px 30px;
+
+  border-bottom: 1px solid #ccc;
+
+  cursor: grab;
+
+  &.gu-transit {
+    // background: #bbb;
+    box-shadow: inset 0 0 20px #777;
+    border-bottom: 1px solid black;
+    cursor: grabbing;
+  }
+
+  // &:last-child {
+  //   border-bottom: none;
+  // }
+}
+
+.gu-mirror {
+  cursor: grabbing;
+  border-bottom: transparent;
+}
+
+// TO-DO: Merge rec-container & lk-container
+.rec-container {
+  // position: absolute;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  // padding: 26px;
+
+  background: white;
+  opacity: 0.95;
+
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.loading {
+  position: fixed;
+  z-index: 100;
+}
+
+.main-btn {
+  width: calc(100% - 30px);
+
+  margin: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .rec-container {
+    position: absolute;
+    // min-width: 300px;
+    max-height: calc(100% - 80px);
+
+    width: auto;
+    height: auto;
+
+    // top: 60px;
+    // top: 110px;
+    top: 70px;
+    left: 10px;
+
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}

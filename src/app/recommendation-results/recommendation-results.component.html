@@ -1,0 +1,27 @@
+<mat-progress-bar
+  *ngIf="showLoading"
+  [mode]="'indeterminate'"
+  [color]="'primary'"
+  class="loading"
+></mat-progress-bar>
+
+<div
+  *ngIf="citiesInRoute"
+  class="rec-container"
+>
+  <ul [dragula]="'bag-recommendations'" [dragulaModel]="citiesInRoute" class="recommendations-list">
+    <!-- <li *ngFor="let recommendedCity of recommendedCities" class="recommended-item">{{recommendedCity.city.name}}</li> -->
+    <li *ngFor="let recommendedCity of citiesInRoute" class="recommended-item">{{recommendedCity.city.name}}</li>
+  </ul>
+
+  <div class="divider">
+    <br>
+  </div>
+
+  <ul [dragula]="'bag-recommendations'" [dragulaModel]="citiesOutOfRoute" class="recommendations-list out-of-route">
+    <!-- <li *ngFor="let recommendedCity of recommendedCities" class="recommended-item">{{recommendedCity.city.name}}</li> -->
+    <li *ngFor="let recommendedCity of citiesOutOfRoute" class="recommended-item">{{recommendedCity.city.name}}</li>
+  </ul>
+
+  <button (click)="rebuildRoute()" mat-stroked-button class="main-btn">Перестроить</button>
+</div>
