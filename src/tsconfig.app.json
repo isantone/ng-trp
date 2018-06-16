@@ -5,6 +5,9 @@
     "module": "es2015",
     "types": []
   },
+  "paths": {
+    "dragula": ["../node_modules/dragula/dist/dragula.min.js"]
+  },
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
