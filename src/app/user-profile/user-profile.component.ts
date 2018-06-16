@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { DataService } from '../services/data.service';
+import { RecommendationsService } from '../services/recommendations.service';
 
 @Component({
   selector: 'trp-user-profile',
@@ -9,18 +10,16 @@ import { DataService } from '../services/data.service';
 })
 export class UserProfileComponent implements OnInit {
   @Input() lkActive: boolean;
-  // objectKeys = Object.keys;
-
-  // user = findUserById(2);
-  // getLkVisibility = getLkVisibility;
 
   users;
   places;
 
   user;
-  // user: any = users[0];
 
-  constructor(private dataService: DataService) { }
+  constructor(
+    private dataService: DataService,
+    private recommendations: RecommendationsService
+  ) { }
 
   ngOnInit() {
     this.dataService.getUsers()
@@ -34,9 +33,6 @@ export class UserProfileComponent implements OnInit {
         this.places = data;
         console.log('Places:', this.places);
     });
-
-    // this.dataService.addUser(user)
-    //   .subscribe(user => console.warn(user));
   }
 
   onLoggedIn(loggedUser: object) {
@@ -49,141 +45,9 @@ export class UserProfileComponent implements OnInit {
       .subscribe((response) => {
         this.user = response;
         console.log('Updated user', this.user);
+
+        this.recommendations.updateRecommendations(this.user.login);
       });
   }
 }
 
-var users = [
-  {
-    "login": "ivan",
-    "password": "0000",
-    "name": "Иван",
-    "info": [
-      {
-        "name": "Возраст",
-        "value": "22"
-      },
-      {
-        "name": "Пол",
-        "value": "Мужской"
-      }
-    ],
-    "places": {
-      "restrict": [
-        "Ufa",
-        "Lipetzk"
-      ],
-      "fav": [
-        "Kazan",
-        "Ekaterinburg"
-      ]
-    },
-    "preferences": [
-      {
-        "id": "history",
-        "name": "История",
-        "value": 9
-      },
-      {
-        "id": "architecture",
-        "name": "Архитектура",
-        "value": 9
-      },
-      {
-        "id": "nature",
-        "name": "Природа",
-        "value": 4
-      },
-      {
-        "id": "food",
-        "name": "Еда",
-        "value": 7
-      },
-      {
-        "id": "modern",
-        "name": "Модерн",
-        "value": 10
-      },
-      {
-        "id": "culture",
-        "name": "Культура",
-        "value": 7
-      },
-      {
-        "id": "water",
-        "name": "Пляжный отдых",
-        "value": 1
-      },
-      {
-        "id": "active",
-        "name": "Активный отдых",
-        "value": 8
-      }
-    ]
-  },
-  {
-    "login": "petr",
-    "password": "1111",
-    "name": "Петр",
-    "info": [
-      {
-        "name": "Возраст",
-        "value": "24"
-      },
-      {
-        "name": "Пол",
-        "value": "Мужской"
-      }
-    ],
-    "places": {
-      "restrict": [
-        "Kazan"
-      ],
-      "fav": [
-        "Moscow"
-      ]
-    },
-    "preferences": [
-      {
-        "id": "history",
-        "name": "История",
-        "value": 1
-      },
-      {
-        "id": "architecture",
-        "name": "Архитектура",
-        "value": 7
-      },
-      {
-        "id": "nature",
-        "name": "Природа",
-        "value": 9
-      },
-      {
-        "id": "food",
-        "name": "Еда",
-        "value": 5
-      },
-      {
-        "id": "modern",
-        "name": "Модерн",
-        "value": 7
-      },
-      {
-        "id": "culture",
-        "name": "Культура",
-        "value": 3
-      },
-      {
-        "id": "water",
-        "name": "Пляжный отдых",
-        "value": 10
-      },
-      {
-        "id": "active",
-        "name": "Активный отдых",
-        "value": 10
-      }
-    ]
-  }
-];
