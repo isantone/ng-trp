@@ -18,9 +18,10 @@ const httpOptions = {
 export class DataService {
 
   usersUrl =  `${httpServerUrl}/users`;
-  // userRegUrl =  `${httpServerUrl}/register`;
+  userRegUrl =  `${httpServerUrl}/register`;
   userLogUrl =  `${httpServerUrl}/login`;
   placesUrl = `${httpServerUrl}/places`;
+  recommendationsUrl = `${httpServerUrl}/recommendations`;
 
   constructor(private http: HttpClient) { }
 
@@ -38,7 +39,7 @@ export class DataService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
 
   getUsers() {
     return this.http.get(this.usersUrl)
@@ -66,7 +67,7 @@ export class DataService {
 
   // register(userLogin, userPassword, userName, userAge, sexValue) {
   register(userLogin, userPassword) {
-    return this.http.post(`${this.usersUrl}/register`, {
+    return this.http.post(this.userRegUrl, {
       login: userLogin,
       password: userPassword,
       // name: userName,
@@ -87,6 +88,10 @@ export class DataService {
   // }
 
   sendLk(userLogin, userLk) {
-    return this.http.put(`${this.usersUrl}/${userLogin}`, userLk, httpOptions)
+    return this.http.put(`${this.usersUrl}/${userLogin}`, userLk, httpOptions);
+  }
+
+  getRecommendations(userLogin) {
+    return this.http.get(`${this.recommendationsUrl}/${userLogin}`);
   }
 }
