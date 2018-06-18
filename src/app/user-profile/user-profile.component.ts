@@ -12,9 +12,14 @@ export class UserProfileComponent implements OnInit {
   @Input() lkActive: boolean;
 
   users;
-  places;
+  // places;
+
+  allPlaces;
 
   user;
+
+  tripDuration = 4;
+  tripOrigin = 'Moscow';
 
   constructor(
     private dataService: DataService,
@@ -30,8 +35,8 @@ export class UserProfileComponent implements OnInit {
 
     this.dataService.getPlaces()
       .subscribe((data) => {
-        this.places = data;
-        console.log('Places:', this.places);
+        this.allPlaces = data;
+        console.log('Places:', this.allPlaces);
     });
   }
 

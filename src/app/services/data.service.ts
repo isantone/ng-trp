@@ -18,9 +18,9 @@ const httpOptions = {
 export class DataService {
 
   usersUrl =  `${httpServerUrl}/users`;
-  userRegUrl =  `${httpServerUrl}/register`;
+  userRegUrl =  `${httpServerUrl}/users/register`;
   userLogUrl =  `${httpServerUrl}/login`;
-  placesUrl = `${httpServerUrl}/places`;
+  placesUrl = `${httpServerUrl}/places/all`;
   recommendationsUrl = `${httpServerUrl}/recommendations`;
 
   constructor(private http: HttpClient) { }
