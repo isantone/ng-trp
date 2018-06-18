@@ -12,11 +12,29 @@
       {{user.login}}
     </p>
 
-    <!-- <ng-container *ngFor="let property of user.info">
-      <p class="user-info">
-        {{property.name}}: {{property.value}}
-      </p>
-    </ng-container> -->
+    <mat-form-field class="form-field">
+      <input
+        [(ngModel)]="tripDuration"
+        matInput
+        type="number"
+        placeholder="Длительность путешествия"
+        min="4"
+        max="50"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field trip-origin">
+      <mat-select
+        [(ngModel)]="tripOrigin"
+        placeholder="Начальный город"
+        required
+      >
+        <mat-option *ngFor="let place of allPlaces" [value]="place.id">
+          {{place.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <ng-container *ngFor="let preference of user.preferences">
       <p class="criteria-label">

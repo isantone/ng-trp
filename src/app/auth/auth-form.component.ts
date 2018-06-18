@@ -20,7 +20,7 @@ export class AuthFormComponent implements OnInit {
   regMode = false;
 
   authText: string = REG_TEXT;
-  authBtnText: string = 'Войти';
+  authBtnText = 'Войти';
 
   @Output() loggedIn = new EventEmitter<object>();
 
