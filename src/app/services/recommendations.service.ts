@@ -16,6 +16,9 @@ export class RecommendationsService {
 
   updateRecommendations(userLogin) {
     this.dataService.getRecommendations(userLogin)
-      .subscribe((response) => this.recommendationsSource.next(response));
+      .subscribe((response) => {
+        console.log('Recoms', response);
+        return this.recommendationsSource.next(response);
+      });
   }
 }

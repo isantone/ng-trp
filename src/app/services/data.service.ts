@@ -70,22 +70,12 @@ export class DataService {
     return this.http.post(this.userRegUrl, {
       login: userLogin,
       password: userPassword,
-      // name: userName,
-      // age: userAge,
-      // sex: sexValue
     })
       .pipe(
         // retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
       );
   }
-
-  // addUser(user) {
-  //   return this.http.post(this.userRegUrl, user, httpOptions)
-  //   .pipe(
-  //     catchError(this.handleError)
-  //   );
-  // }
 
   sendLk(userLogin, userLk) {
     return this.http.put(`${this.usersUrl}/${userLogin}`, userLk, httpOptions);

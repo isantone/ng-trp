@@ -57,14 +57,4 @@ export class AuthFormComponent implements OnInit {
         }
       });
   }
-
-  // registerUser() {
-  //   // TO-DO IMPLEMENT PASSWORD CHECKING
-  //   this.dataService.register(this.loginValue)
-  //     .subscribe((loggedUser) => {
-  //       if (loggedUser) {
-  //         this.loggedIn.emit(loggedUser);
-  //       }
-  //     });
-  // }
 }
